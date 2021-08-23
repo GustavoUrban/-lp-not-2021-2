@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 04</title>
+    <script>
+        /*
+        Solicite ao usuário que informe o número correspondente a um
+        mês, na faixa entre 1 e 12.
+        Usando a estrutura switch..case, informe de volta ao usuário quantos
+        dias possui o mês informado, conforme segue:
+        * JANEIRO, MARÇO, MAIO, JULHO, AGOSTO, OUTUBRO e DEZEMBRO: 31 dias
+        * ABRIL, JUNHO, SETEMBRO e NOVEMBRO: 30 dias
+        * FEVEREIRO: 28 ou 29 dias (em anos bissextos)
+        */
+
+        
+        let mes = parseInt(Number(prompt("Informe o número correspondente a um mês: ")))
+       
+        if (isNaN(mes)) {
+            alert("ERRO!! Este não é um número válido")
+        }
+
+        switch(mes){
+            case "1":
+            document.write("O mês de Janeiro contém 31 dias")
+            break
+            case "3":
+            document.write("O mês de Março contém 31 dias")
+            break
+            case "5":
+            document.write("O mês de Maio contém 31 dias")
+            break
+            case "7":
+            document.write("O mês de Julho contém 31 dias")
+            break
+            case "8":
+            document.write("O mês de Agosto contém 31 dias")
+            break
+            case "10":
+            document.write("O mês de Outubro contém 31 dias")
+            break
+            case "12":
+            document.write("O mês de Dezembro contém 31 dias")
+            break
+            case "2":
+            document.write("O mês de Fevereiro contém 28 dias ou 29 dias se ano Bissexto")
+            break
+            case "4":
+            document.write("O mês de Abril contém 30 dias")
+            break
+            case "6":
+            document.write("O mês de Junho contém 30 dias")
+            break
+            case "9":
+            document.write("O mês de Setembro contém 31 dias")
+            break
+            case "11":
+            document.write("O mês de Novembro contém 31 dias")
+            break
+        
+          
+            default:
+                    alert("ERRO! Operador inválido!")
+
+
+        }
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

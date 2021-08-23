@@ -31,6 +31,7 @@ e informe o resultado usando document.write().
         else if( op ==! "+" || "-" || "/" || ":" || "x" || "X" || "*"){
             alert("ERRO!! Esse não é um operador!")
         }
+        /*
         else {
             switch(op){
                 case "+":
@@ -51,13 +52,10 @@ e informe o resultado usando document.write().
                 default:
                     alert("ERRO! Operador inválido!")
             }
-        }
+        }*/
 
-
-
-
-        /*
-        else {
+        
+             else {
                 if (op === "+"){
                     let result = num1 + num2
                 document.write("A Soma dos números é = " + result)
@@ -75,8 +73,18 @@ e informe o resultado usando document.write().
                     document.write("A Divisão dos números é = " + result)
                 }
             }
-            */
+            
 
+            //document.write(num1 + " " + op + " " + num2 + "É Igual a =" result)
+            
+            //usando string templates
+            //String templates são strings delimitadas por ``(acento agudo, "crase")
+            //e que aceitam, dentro delas, a interpolação de variáveis usando código
+            //${}
+           
+
+            if(result !== undefined)
+                document.write(`${num1} ${op} ${num2} é igual a ${result}`)
     </script>
 </head>
 <body>
