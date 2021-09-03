@@ -18,6 +18,7 @@
         de atendimento ao usuário da AUTOBURACON S/A.
         */
 
+        /*
               let comp 
         
         do {
@@ -36,8 +37,15 @@
 
             km++
         }
-
-        
+        */
+        for(let km = 1; km <= comprimento; km ++) {
+            if(km % 31 === 0){
+                document.write(`O Km ${km} tem um pedagio<br>`)
+            }
+            if(km % 23 === 0){
+                document.write(`O Km ${km} tem um Posto de Atendimento<br>`)
+            }
+        }
     
     </script>
 </head>
