@@ -6,12 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        /*  Implemente um loop for que, começando em 3, indo até 1000,
-         e  avançando de 3 em 3, imprima com document.write() apenas os
-           valores da variável de controle que sejam múltiplos de 7.
+         /*
+            Implemente um loop for que, começando em 3, indo até 1000, e
+            avançando de 3 em 3, imprima com document.write() apenas os
+            valores da variável de controle que sejam múltiplos de 7.
         */
-        for(let i = 3 <= 1000; i += 3)
-            
+        for(let i = 3; i <= 1000; i += 3) {
+            if(i % 7 === 0) {
+                document.write(i + '<br>')
+            }
+        }    
 
 
     </script>

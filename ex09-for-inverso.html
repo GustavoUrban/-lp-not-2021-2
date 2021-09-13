@@ -14,14 +14,14 @@
        let num
 
        do {
-           num = parseInt(prompt("Informe um número inteiro"))
+           num = parseInt(prompt("Informe um número maior que 1: "))
 
        } while (isNaN(num) || num <=1)
        let fatorial = 1 
        for(let i = num; i > 1; 1--){
             fatorial *= i
        }
-       document.write(`O fatorial de ${num} é igual a ${fatorial}`)
+       document.write(`${num}! é igual a ${fatorial}`)
 
 
        
