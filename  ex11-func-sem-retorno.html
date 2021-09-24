@@ -42,16 +42,22 @@
             carac = prompt("informe um caractere diferente de espaço em branco:")
         } while (carac === " " || carac.lenght !== 1 )
 
-        // For do eixo de y (vertical)
-        for(let y = 1; y <= quant; y ++){
-            let  linha = " "
-
-            //For do eixo x (horizontal)
-            for(let x = 1; x <= quant; x++) {
-                linha += carac
+         // Declaração de função sem valor de retorno
+         function desenhar(quant, carac) {
+            // For do eixo y (vertical)
+            for(let y = 1; y <= quant; y++) {
+                //let linha = ''
+                // For do eixo x (horizontal)
+                /*for(let x = 1; x <= y; x++) {
+                    linha += carac
+                }*/
+                let linha = carac.repeat(y)
+                document.write(linha + '<br>')
             }
-            document.write(linha + "<br>")
         }
+
+        // Chamada da função
+        desenhar(quant, carac)
     </script>
 </head>
 <body>
