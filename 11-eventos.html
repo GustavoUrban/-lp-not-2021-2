@@ -4,35 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eventos</title>
+    <title>Eventos DOM</title>
     <style>
-        #quadrado{
-            width: 100px;
-            height: 100px;
-            border: 3px solid blue;
-            background-color: cornflowerblue;
-                    }
+        /* Regra para o elemento cujo id é quadrado */
+        #quadrado {
+            width: 100px;   /* largura */
+            height: 100px;  /* altura */
+            border: 3px solid blue; /* borda */
+            background-color: cornflowerblue;   /* cor de fundo */
+        }
     </style>
 </head>
 <body>
-    <div id= 'quadrado'>   </div>
-    <div id = "msg"> </div>
+    <div id="quadrado"></div>
+    <div id="msg"></div>
     <hr>
     <input id="nome">
-    <button id ="exibir">Exibir saudação</button>
+    <button id="exibir">Exibir saudação</button>
+    
     <script>
-        /* Eventos são acontecimentos que podem ocorrer com os elementos HTML
 
-        Podemos instruir o JavaScript a "prestar atenção" 
-        no eventos (Prestar atenção, ouvir -> 'to listen') e quando eles acontecerem,
-        executar uma ação prevista em uma função.
-
-        Para fazer isso, adicionamos um "escutador" - "listener",
-        que presta atenção em um tipo específico de evento e dispara a função
-        que foi a ele indicada.    
+        /*
+            Eventos são acontecimentos que podem ocorrer com os
+            elementos HTML.
+            Podemos instruir o JavaScript a "prestar atenção" nos
+            eventos (prestar atenção, ouvir -> "to listen") e,
+            quando eles acontecerem, executar uma ação prevista em
+            uma função.
+            Para fazer isso, adicionamos um "escutador" - "listener",
+            que presta atenção em um tipo específico de evento e dispara
+            a função que foi a ele indicada.
         */
-
-        function clicou(){
+        
+        function clicou() {
             alert('Você clicou no quadrado!')
         }
 
@@ -40,32 +44,40 @@
         let nome = document.querySelector('#nome')
         let exibir = document.getElementById('exibir')
 
+        function mouseEntrou() {
+            msg.textContent = 'Mouse entrou no quadrado'
+        }
 
-        function mouseentrou(){
-            msg.textContent = "Mouse entrou no quadrado"
+        function mouseSaiu() {
+            msg.textContent = ''
         }
-        function mousesaiu(){
-            msg.textContent = ""
-        }
-        function cliqueexibir(){
+
+        function cliqueExibir() {
             alert(`Olá, ${nome.value}!`)
         }
-        function inputtecla(){
+
+        function inputTecla() {
+            // nome.value -> conteúdo do input
+            // nome.value.toUpperCase() -> converte para maiúsculas
             msg.textContent = nome.value.toUpperCase()
         }
-    
 
-    
         let quadrado = document.querySelector('#quadrado')
 
-        //Quando ocorrer um clique dentro do quadrado, será
-        // chamada a função clicou
-
+        // Quando ocorrer um clique dentro do quadrado, será
+        // chamada a função clicou.
         quadrado.addEventListener('click', clicou)
-        quadrado.addEventListener('mouseenter', mouseentrou)
-        quadrado.addEventListener('mouseleave', mousesaiu)
 
+        quadrado.addEventListener('mouseenter', mouseEntrou)
 
+        quadrado.addEventListener('mouseleave', mouseSaiu)
+
+        // Evento: o usuário liberou uma tecla pressionada
+        nome.addEventListener('keyup', inputTecla)
+
+        exibir.addEventListener('click', cliqueExibir)
+
+    </script>
     </script>
 </body>
 </html>
