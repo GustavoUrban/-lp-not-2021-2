@@ -9,11 +9,11 @@
 <body>
     <h1> Document Object Model (DOM)  </h1>
 
-    <ol>
-        <li>São Paulo</li>
-        <li>Minas Gerais</li>
-        <li>Rio de Janeiro</li>
-        <li>Espírito Santo</li>
+    <ol id = "estados">
+        <li id = "sp">São Paulo</li>
+        <li id ="mg">Minas Gerais</li>
+        <li id = "rj">Rio de Janeiro</li>
+        <li id = "es">Espírito Santo</li>
           
     </ol>
 
@@ -35,6 +35,19 @@
 
         //Trocar a cor do TERCEIRO item
         itens[2].style.color = 'blue' 
+
+        // Capturando um elemento pelo seu id - existem duas formas
+        let itemMg = document.getElementById('mg') // Forma classica
+        itemMg.style.backgroundColor = 'yellow' 
+
+        // Forma moderna - nescessaria colocar # antes do id
+        let itemEs = document.querySelector ('#es')
+        itemEs.style.fontWeight = 'bold'
+
+        let listaOrd = document.querySelector ('#estados')
+        // muda o marcador da pagina para letras maisculas
+        listaOrd.style.listStyleType = 'upper-alpha'
+
 
     </script>
 </body>
