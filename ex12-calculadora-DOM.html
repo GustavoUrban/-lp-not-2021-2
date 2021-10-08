@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora DOM</title>
+    <style>
+            #resultado {
+            border: 3px solid navy;
+            padding: 10px;  /* Espaçamento interno */
+            background-color: lightskyblue;
+            text-align: center;
+            border-radius: 10px;
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>Calculadora DOM</h1>
+
+    <div>
+        <label for="num1">Primeiro número</label>
+        <input id="num1" type="number">
+    </div>
+
+    <div>
+        <label for="oper">Operação</label>
+        <select id="oper">
+            <option>(Selecione)</option>
+            <option>Soma (+)</option>
+            <option>Subtração (-)</option>
+            <option>Multiplicação (*)</option>
+            <option>Divisão (/)</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="num2">Segundo número</label>
+        <input id="num2" type="number">
+    </div>
+
+    <div>
+        <button id="calcular">Calcular</button>
+    </div>
+    
+
+    <div id="resultado"></div>
+
+    <script>
+
+        const num1 = document.querySelector('#num1')
+        const num2 = document.querySelector('#num2')
+        const oper = document.querySelector('#oper')
+        const calcular = document.querySelector('#calcular')
+        const resultado = document.querySelector('#resultado')
+
+
+        function validar() {
+
+        //Numero 1
+        if(num1.value === '') {
+            alert('O primeiro número precisa ser preenchido.')
+            num1.focus()
+            return false    
+        }
+
+        // Numero 2
+        if(num2.value === '') {
+            alert('O segundo número precisa ser preenchido.')
+            num2.focus()
+            return false
+        }
+
+        // Operador
+        if(oper.selectedIndex <= 0) {
+            alert('Selecione uma operação.')
+            oper.focus()
+            return false
+        }
+        return true
+    }
+
+    function mostraResultado(){
+
+        if (validar()) {
+
+           
+                switch (oper.selectedIndex){
+                    case 1: 
+                   let result = (num1.value + num2.value)
+                    break
+
+                    case 2: 
+                    let result = (num1.value - num2.value)
+                    break
+
+                    case 3: 
+                   let result = (num1.value * num2.value)
+                    break
+
+                    case 4: 
+                   let result = (num1.value / num2.value)
+                    break
+                }
+        }
+        resultado.textContent += result
+    }
+    calcular.addEventListener('click', mostraResultado)
+    
+
+    </script>
+
+    
+</body>
+</html>
