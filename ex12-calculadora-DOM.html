@@ -41,6 +41,7 @@
 
     <div>
         <button id="calcular">Calcular</button>
+        <button id="limpar">Limpar</button>
     </div>
     
 
@@ -52,21 +53,25 @@
         const num2 = document.querySelector('#num2')
         const oper = document.querySelector('#oper')
         const calcular = document.querySelector('#calcular')
+        const limpar = document.querySelector('#limpar')
         const resultado = document.querySelector('#resultado')
 
 
         function validar() {
 
+            let valNum1 = parseFloat(num1.value)
+            let valNum2 = parseFloat(num2.value)
+
         //Numero 1
-        if(num1.value === '') {
-            alert('O primeiro número precisa ser preenchido.')
+        if(isNaN(valNum1)) {
+            alert('Informe um número válido!')
             num1.focus()
             return false    
         }
 
         // Numero 2
-        if(num2.value === '') {
-            alert('O segundo número precisa ser preenchido.')
+        if(isNaN(valNum2)) {
+            alert('Informe um número válido!')
             num2.focus()
             return false
         }
@@ -84,26 +89,34 @@
 
         if (validar()) {
 
+            let valNum1 = parseFloat(num1.value)
+            let valNum2 = parseFloat(num2.value)
+            let res 
+
            
                 switch (oper.selectedIndex){
                     case 1: 
-                   let result = (num1.value + num2.value)
+                   res = valNum1 + valNum2
                     break
 
                     case 2: 
-                    let result = (num1.value - num2.value)
+                    res = valNum1 - valNum2
                     break
 
                     case 3: 
-                   let result = (num1.value * num2.value)
+                   res = valNum1 * valNum2
                     break
 
                     case 4: 
-                   let result = (num1.value / num2.value)
+                   res = valNum1 / valNum2
                     break
                 }
         }
-        resultado.textContent += result
+        //limitada a 4 casas decimais
+        //resultado.textContent = res.toFixed(4)
+        //resultado.textContent = res.toLocaleString(pt-br)
+
+        resultado.innerHTML = '<strong>'  + res.toLocaleString('pt-br') + '</strong>'
     }
     calcular.addEventListener('click', mostraResultado)
     
