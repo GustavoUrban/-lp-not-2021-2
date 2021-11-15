@@ -7,7 +7,8 @@
 </head>
 <body>
     <h1>Estados do Sudeste e do Sul do Brasil</h1>
-    <ul id = estados type = "a">
+    <ul id="estados" type="a">
+
     </ul>
     <script>
                 
@@ -43,10 +44,40 @@
 
         */
              for (let e of estados) {
-                const lista = document.querySelector('#estados')
-                document.write('[' + e + '] <br>')
-                
+
+                const lista = document.querySelector('ul')
+             
+
+                const itemSP = document.createElement('li')
+                itemSP.textContent = 'São Paulo'
+                lista.prepend(itemSP)
+
+                const itemSC = document.createElement('li')
+                itemSC.textContent = 'Santa Catarina'
+                lista.prepend(itemSC)
+
+                const itemRN = document.createElement('li')
+                itemRN.textContent = 'Rio Grande do Sul'
+                lista.prepend(itemRN)
+
+                const itemRJ = document.createElement('li')
+                itemRJ.textContent = 'Rio de Janeiro'
+                lista.prepend(itemRJ)
+
+                const itemPR = document.createElement('li')
+                itemPR.textContent = 'Paraná'
+                lista.prepend(itemPR)
+
+                const itemMG = document.createElement('li')
+                itemMG.textContent = 'Minas Gerais'
+                lista.prepend(itemMG)
+
+                const itemES = document.createElement('li')
+                itemES.textContent = 'Espirito Santo'
+                lista.prepend(itemES)
+
              }
+             
        
 
         
