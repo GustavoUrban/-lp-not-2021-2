@@ -43,38 +43,13 @@
              lista para cada um dos elementos do vetor e insira-o na lista não ordenada.
 
         */
+        const lista = document.querySelector('ul')
              for (let e of estados) {
 
-                const lista = document.querySelector('ul')
-             
-
-                const itemSP = document.createElement('li')
-                itemSP.textContent = 'São Paulo'
-                lista.prepend(itemSP)
-
-                const itemSC = document.createElement('li')
-                itemSC.textContent = 'Santa Catarina'
-                lista.prepend(itemSC)
-
-                const itemRN = document.createElement('li')
-                itemRN.textContent = 'Rio Grande do Sul'
-                lista.prepend(itemRN)
-
-                const itemRJ = document.createElement('li')
-                itemRJ.textContent = 'Rio de Janeiro'
-                lista.prepend(itemRJ)
-
-                const itemPR = document.createElement('li')
-                itemPR.textContent = 'Paraná'
-                lista.prepend(itemPR)
-
-                const itemMG = document.createElement('li')
-                itemMG.textContent = 'Minas Gerais'
-                lista.prepend(itemMG)
-
-                const itemES = document.createElement('li')
-                itemES.textContent = 'Espirito Santo'
-                lista.prepend(itemES)
+                const item = document.createElement('li')
+                item.textContent = e
+                lista.appendChild(item)
+               
 
              }
              
